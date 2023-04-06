@@ -1,0 +1,106 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.cab { font-size:1.5em; }
+.tit { font-size:2em; text-shadow:1px 1px 0 #444 }
+.painel { 
+  font-size:4.8em; 
+  color:#FF3; 
+  text-shadow:2px 2px 2px #fff;  
+  animation:blinking 1.5s infinite;}
+.tabela { 
+    max-height: 400px; /* Define a largura máxima da tabela */
+    overflow: auto; /* Adiciona uma barra de rolagem quando o conteúdo exceder a largura máxima */
+    column-count: 2; /* Divide a tabela em duas colunas */
+    column-gap: 20px; /* Define a distância entre as colunas */
+ }
+table td { 
+  font-size:1rem; 
+  font-weight: bold;
+  
+}
+.ag { 
+  font-size:1.5em; 
+}
+.ch { 
+  font-size:1.5em; 
+}
+@keyframes blinking{
+0%{   color: yellow;   }
+47%{   color: #fff; }
+62%{   color: transparent; }
+97%{   color:transparent; }
+100%{  color: #fff;   }
+}
+#scroll-container {
+  
+  overflow: hidden;
+}
+.logo-imagem{ width: 10vw;}
+.logo { font-size: 1.0em; text-shadow: 3px 3px 3px #BEBEBE; margin-top: 0;  }
+#scroll-text {
+  /* animation properties */
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  
+  -moz-animation: my-animation 15s linear infinite;
+  -webkit-animation: my-animation 15s linear infinite;
+  animation: my-animation 15s linear infinite;
+  white-space: nowrap;
+
+}
+
+/* for Firefox */
+@-moz-keyframes my-animation {
+  from { -moz-transform: translateX(100%); }
+  to { -moz-transform: translateX(-100%); }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+  from { -webkit-transform: translateX(100%); }
+  to { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes my-animation {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+
+html,body {
+
+    height: 100%;
+    
+}
+
+#nonFooter {
+    min-height: 100%;
+    position:relative;
+    /* Firefox */
+    min-height: -moz-calc(100% - 30px);
+    /* WebKit */
+    min-height: -webkit-calc(100% - 30px);
+    /* Opera */
+    min-height: -o-calc(100% - 30px);
+    /* Standard */
+    min-height: calc(100% - 30px);
+}
+
+#footer {
+    height:30px;
+    margin: 0;
+    clear: both;
+    width:100%;
+    position: relative;
+}
